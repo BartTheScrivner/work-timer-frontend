@@ -8,11 +8,17 @@ import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk'
 
-const rootReducer = combineReducers({
+const appReducer = combineReducers({
   user: userReducer,
   projects: projectReducer,
   sessions: sessionReducer
 })
+const rootReducer = (state, action) => {
+  if (action.type === 'USER_LOGOUT') {
+    state = undefined
+  }
+  return appReducer(state, action)
+}
 
 const store = createStore(
   rootReducer, compose(
