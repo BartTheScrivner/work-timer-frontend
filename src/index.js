@@ -9,9 +9,10 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk'
 
 const appReducer = combineReducers({
-  user: userReducer,
-  projects: projectReducer,
-  sessions: sessionReducer
+  nothing: []
+  // user: userReducer,
+  // projects: projectReducer,
+  // sessions: sessionReducer
 })
 const rootReducer = (state, action) => {
   if (action.type === 'USER_LOGOUT') {
