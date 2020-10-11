@@ -36,10 +36,10 @@ export default function Timer() {
 
   const formatTime = () => {
     const difference = (count - start) + total
-    const getSeconds = `0${Math.floor((difference % (1000 * 60)) / 1000)}`.slice(-2);
-    const getMinutes = `0${Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))}`.slice(-2);
-    const getHours = `0${Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))}`.slice(-2);
-    return `${getHours} : ${getMinutes} : ${getSeconds}`;
+    const seconds = `0${Math.floor((difference % (1000 * 60)) / 1000)}`.slice(-2);
+    const minutes = `0${Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60))}`.slice(-2);
+    const hours = `0${Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))}`.slice(-2);
+    return `${hours} : ${minutes} : ${seconds}`;
   };
 
   return (
