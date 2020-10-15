@@ -9,7 +9,26 @@ export default function Timer() {
   const [count, setCount] = useState(0);
   //boolean to keep track of play/pause
   const [counting, setCounting] = useState(false);
+  const [end, setEnd] = useState(0);
   const counter = useRef(null);
+
+  //In the future, handleStop should be passed in as a prop
+    //for maximum reusability.
+  const handleStop = () => {
+    setEnd(new Date().getTime());
+    let request = {
+    method: "POST",
+    headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json"
+    },
+    body: JSON.stringify({start, end})
+    }
+    }
+    fetch(`http://localhost:3000/sessions`, request)
+    .then(r => r.json())
+    .then(data => this.handleResponse(data))
+  }
 
   const toggleCounter = () => {
     //if not counting (and therefore wishing to start), capture a start time and a count time whose initial difference from #start is 0
@@ -48,6 +67,7 @@ export default function Timer() {
       <button className="pause-play" onClick={toggleCounter}>
         {counting === false ? "START" : "PAUSE"}
       </button>
+      <button onClick={handleStop}>STOP</button>
     </div>
   );
 }
