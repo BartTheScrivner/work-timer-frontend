@@ -16,18 +16,7 @@ export default function Timer() {
     //for maximum reusability.
   const handleStop = () => {
     setEnd(new Date().getTime());
-    let request = {
-    method: "POST",
-    headers: {
-    "Content-Type": "application/json",
-    Accept: "application/json"
-    },
-    body: JSON.stringify({start, end})
-    }
-    }
-    fetch(`http://localhost:3000/sessions`, request)
-    .then(r => r.json())
-    .then(data => this.handleResponse(data))
+    props.handleStop(start, end)
   }
 
   const toggleCounter = () => {
