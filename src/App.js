@@ -1,5 +1,5 @@
 import React from 'react';
-import Timer from './components/Timer'
+import Task from './components/Task'
 import logo from './logo.svg';
 import './App.css';
 
@@ -8,9 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          <Timer/>
-        </p>
+          <Task/>
         <a
           className="App-link"
           href="https://reactjs.org"

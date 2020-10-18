@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 
-export default function Timer() {
+export default function Timer(props) {
   //total time counted
   const [total, setTotal] = useState(0);
   //the Unix time when the timer is started
@@ -9,15 +9,7 @@ export default function Timer() {
   const [count, setCount] = useState(0);
   //boolean to keep track of play/pause
   const [counting, setCounting] = useState(false);
-  const [end, setEnd] = useState(0);
   const counter = useRef(null);
-
-  //In the future, handleStop should be passed in as a prop
-    //for maximum reusability.
-  const handleStop = () => {
-    setEnd(new Date().getTime());
-    props.handleStop(start, end)
-  }
 
   const toggleCounter = () => {
     //if not counting (and therefore wishing to start), capture a start time and a count time whose initial difference from #start is 0
@@ -25,22 +17,18 @@ export default function Timer() {
       setStart(new Date().getTime());
       setCount(new Date().getTime());
       setCounting(true);
-    //begin incrementing #count every 100ms
-      counter.current = setInterval(incrementTimer, 100);
+      //useRef to begin incrementing #count every 100ms
+      counter.current = setInterval(()=>setCount(new Date().getTime()), 100);
     //if counting (and therefore wishing to pause), reset state, increment total, and stop incrementing #count
     } else {
-      setStart(0);
-      setCount(0);
       setCounting(false);
       setTotal(total + (count - start));
+      props.handleStop(start, count);
+      setStart(0);
+      setCount(0);
       clearInterval(counter.current);
     }
   };
-
-  //this function updates the time stored at #count to the current time
-  const incrementTimer = () => {
-    setCount(new Date().getTime())
-  }
 
   const formatTime = () => {
     const difference = (count - start) + total
@@ -56,7 +44,6 @@ export default function Timer() {
       <button className="pause-play" onClick={toggleCounter}>
         {counting === false ? "START" : "PAUSE"}
       </button>
-      <button onClick={handleStop}>STOP</button>
     </div>
   );
 }
