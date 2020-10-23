@@ -21,7 +21,7 @@ function App() {
             render={
               !this.props.user.loggedIn
                 ? () => <Redirect to="/" />
-                : (rProps) => (<ProfileContainer {...rProps}/>)
+                : (rProps) => (<DashboardContainer {...rProps}/>)
             }
           />
           <Route
@@ -29,7 +29,7 @@ function App() {
             render={
               !this.props.user.loggedIn
                 ? () => <Redirect to="/" />
-                : (rProps) => (<DiscoverContainer {...rProps}/>)
+                : (rProps) => (<InsightsContainer {...rProps}/>)
             }
           />
           <Route
@@ -37,7 +37,7 @@ function App() {
             render={
               !this.props.user.loggedIn
                 ? () => <Redirect to="/" />
-                : (rProps) => (<FriendsContainer {...rProps}/>)
+                : (rProps) => (<ProjectContainer {...rProps}/>)
             }
           />
       </Router>
