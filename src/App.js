@@ -1,16 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
+import DashboardContainer from './containers/DashboardContainer'
+import InsightsContainer from './containers/InsightsContainer'
+import ProjectContainer from './containers/ProjectContainer'
+import Navbar from './components/Navbar'
+import Welcome from './containers/Welcome'
 import './App.css';
 
-function App() {
+function App(props) {
   return (
   <Router>
-        <NavBar />
+        <Navbar />
           <Route
             exact
             path="/"
             render={
-              this.props.user.loggedIn
+              props.user.loggedIn
                 ? () => <Redirect to="/projects" />
                 : () => <Welcome />
             }
@@ -19,7 +25,7 @@ function App() {
             exact
             path="/projects"
             render={
-              !this.props.user.loggedIn
+              !props.user.loggedIn
                 ? () => <Redirect to="/" />
                 : (rProps) => (<DashboardContainer {...rProps}/>)
             }
@@ -27,7 +33,7 @@ function App() {
           <Route
             path="/insights"
             render={
-              !this.props.user.loggedIn
+              !props.user.loggedIn
                 ? () => <Redirect to="/" />
                 : (rProps) => (<InsightsContainer {...rProps}/>)
             }
@@ -35,7 +41,7 @@ function App() {
           <Route
             path="/projects/:id"
             render={
-              !this.props.user.loggedIn
+              !props.user.loggedIn
                 ? () => <Redirect to="/" />
                 : (rProps) => (<ProjectContainer {...rProps}/>)
             }
@@ -43,5 +49,13 @@ function App() {
       </Router>
   )
 }
+const mapStateToProps = (state) => ({
+  user: state.user,
+  projects: state.projects
+})
 
-export default App;
+const mapDispatchToProps = {
+  
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)

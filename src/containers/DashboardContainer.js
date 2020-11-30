@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import ProjectThumb from '../components/ProjectThumb'
 
-export const Dashboard = () => {
+export const Dashboard = (props) => {
   return (
     <div>
       {props.projects.array.forEach(project => <ProjectThumb project={project}/>)}
