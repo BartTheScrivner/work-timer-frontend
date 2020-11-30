@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { connect } from 'react-redux'
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom'
 import DashboardContainer from './containers/DashboardContainer'
@@ -6,9 +6,17 @@ import InsightsContainer from './containers/InsightsContainer'
 import ProjectContainer from './containers/ProjectContainer'
 import Navbar from './components/Navbar'
 import Welcome from './containers/Welcome'
+import { setUser, logoutUser } from './actions/userActions'
 import './App.css';
 
 function App(props) {
+  useEffect(() => {
+    if (localStorage.token) {
+      props.setUser()
+    }
+    return () => {
+    }
+  }, [])
   return (
   <Router>
         <Navbar />
@@ -54,8 +62,4 @@ const mapStateToProps = (state) => ({
   projects: state.projects
 })
 
-const mapDispatchToProps = {
-  
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(App)
+export default connect(mapStateToProps, { setUser, logoutUser })(App)

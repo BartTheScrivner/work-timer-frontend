@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-export const InsightsDash = () => {
+export const InsightsContainer = () => {
   return (
     <div>
       BLEH
@@ -19,4 +19,4 @@ const mapDispatchToProps = {
   
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(InsightsDash)
+export default connect(mapStateToProps, mapDispatchToProps)(InsightsContainer)

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
-export const ProjectDash = () => {
+export const ProjectContainer = () => {
   return (
     <div>
       <div className="backlog">
@@ -26,4 +26,4 @@ const mapDispatchToProps = {
   
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ProjectDash)
+export default connect(mapStateToProps, mapDispatchToProps)(ProjectContainer)

@@ -5,7 +5,7 @@ import ProjectThumb from '../components/ProjectThumb'
 export const Dashboard = (props) => {
   return (
     <div>
-      {props.projects.array.forEach(project => <ProjectThumb project={project}/>)}
+      {props.projects.forEach(project => <ProjectThumb project={project}/>)}
     </div>
   )
 }
