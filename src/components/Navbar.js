@@ -3,9 +3,18 @@ import { connect } from 'react-redux'
 
 export const Navbar = () => {
   return (
-    <div>
-      FARTS
-    </div>
+    <>
+      <div className="nav">
+        <div className="nav-brand">o</div>
+        <div className="nav-menu">
+          <ul className="nav-items">
+            <li className="projects">Projects</li>
+            <li className="nav-item">Dashboard</li>
+            <li className="nav-item">Settings</li>
+          </ul>
+        </div>
+      </div>
+    </>
   )
 }
 

@@ -17,7 +17,7 @@ export default function Task() {
     //   .then(data => this.handleResponse(data))
   }
   return (
-    <div className="">
+    <div className="task">
       <h2>Task Name:</h2>
       <Timer handleStop={handleStop}/>
     </div>
