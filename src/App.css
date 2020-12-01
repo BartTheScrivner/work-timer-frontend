@@ -51,37 +51,39 @@ body {
 }
 
 .nav {
-  position: relative;
-  top: 0;
-  width: 100vw;
-  min-height: 4rem;
+  position: absolute;
+  left: 0;
+  height: 100vh;
+  width: 10rem;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   align-items: center;
   background-color: rgba(78, 118, 192, 0.267);
 }
 
 .nav-brand{
-  height: 100%;
-  width: 30%;
+  width: 100%;
+  height: 30%;
   text-align: center;
   align-self: flex-start;
   margin: auto;
 }
 
 .nav-menu {
-  width: 70%;
-  height: 100%;
+  height: 70%;
+  width: 100%;
 }
 
 .nav-items {
+  padding: 0;
   list-style: none;
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: space-around;
   height: 100%;
 }
 
-.nav-item {
-  height: 100%;
+.nav-items li {
+  text-align: center;
+  width: 100%;
 }

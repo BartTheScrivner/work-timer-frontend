@@ -10,13 +10,14 @@ import { setUser, logoutUser } from './actions/userActions'
 import './App.css';
 
 function App(props) {
+  const setUser = props.setUser
   useEffect(() => {
     if (localStorage.token) {
-      props.setUser()
+      setUser()
     }
     return () => {
     }
-  }, [])
+  })
   return (
   <Router>
         <Navbar />
