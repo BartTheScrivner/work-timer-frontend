@@ -14,8 +14,5 @@ const mapStateToProps = (state) => ({
   projects: state.projects
 })
 
-const mapDispatchToProps = {
-  
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Dashboard)
+export default connect(mapStateToProps)(Dashboard)

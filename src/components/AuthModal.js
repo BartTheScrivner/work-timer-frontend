@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal, Menu, Segment, MenuItem } from 'semantic-ui-react'
+import { Modal, Menu, Segment } from 'semantic-ui-react'
 import Signup from './Signup'
 import Login from './Login'
 
@@ -15,7 +15,7 @@ function AuthModal(props) {
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
-      trigger={<MenuItem>Login</MenuItem>}
+      trigger={<li className="nav-item">Login</li>}
     >
       <Menu attached='top' tabular>
         <Menu.Item

@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import {NavLink} from "react-router-dom"
+import AuthModal from './AuthModal'
 
 export const Navbar = () => {
   return (
@@ -12,6 +13,7 @@ export const Navbar = () => {
             <li className="projects"><NavLink to="/projects">Projects</NavLink></li>
             <li className="nav-item"><NavLink to="/insights">Insights</NavLink></li>
             <li className="nav-item"><NavLink to="/settings">Settings</NavLink></li>
+            <AuthModal />
           </ul>
         </nav>
       </div>
