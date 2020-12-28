@@ -7,13 +7,13 @@ export const Navbar = () => {
     <>
       <div className="nav">
         <div className="nav-brand">o</div>
-        <div className="nav-menu">
+        <nav className="nav-menu">
           <ul className="nav-items">
             <li className="projects"><NavLink to="/projects">Projects</NavLink></li>
             <li className="nav-item"><NavLink to="/insights">Insights</NavLink></li>
             <li className="nav-item"><NavLink to="/settings">Settings</NavLink></li>
           </ul>
-        </div>
+        </nav>
       </div>
     </>
   )
