@@ -1,8 +1,8 @@
 const initialState = {
-  state = {}
+  loggedIn: false
 }
 
-export default function userReducer(state = {}, action) {
+export default function userReducer(state = initialState, action) {
   let user;
   switch (action.type) {
     case 'START_LOGGING_IN':
@@ -26,10 +26,7 @@ export default function userReducer(state = {}, action) {
       };
       case "LOGOUT_USER":
         localStorage.clear()
-        return {
-          ...state,
-          loggedIn: false
-        };
+        return initialState;
       default:
         return state;
     }
