@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 export const InsightsContainer = () => {
   return (
-    <div>
+    <div className="container">
       BLEH
     </div>
   )

@@ -4,7 +4,7 @@ import ProjectThumb from '../components/ProjectThumb'
 
 export const Dashboard = (props) => {
   return (
-    <div>
+    <div className="container">
       {props.projects.forEach(project => <ProjectThumb project={project}/>)}
     </div>
   )

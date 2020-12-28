@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 
 export const ProjectContainer = () => {
   return (
-    <div>
+    <div className="container">
       <div className="backlog">
       {/* Tasks where time is zero */}
       </div>
