@@ -1,5 +1,4 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import {NavLink} from "react-router-dom"
 import AuthModal from './AuthModal'
 
@@ -21,12 +20,4 @@ export const Navbar = () => {
   )
 }
 
-const mapStateToProps = (state) => ({
-  
-})
-
-const mapDispatchToProps = {
-  
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar)
+export default Navbar

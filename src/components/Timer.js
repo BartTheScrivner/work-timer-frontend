@@ -44,6 +44,9 @@ export default function Timer(props) {
       <button className="pause-play" onClick={toggleCounter}>
         {counting === false ? "START" : "PAUSE"}
       </button>
+      <button className="stop" onClick={toggleCounter}>
+        STOP
+      </button>
     </div>
   );
 }
