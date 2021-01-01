@@ -25,7 +25,7 @@ function App(props) {
             exact
             path="/"
             render={
-              props.user.loggedIn
+              props.user.loggedIn === true
                 ? () => <Redirect to="/projects" />
                 : () => <Welcome />
             }
@@ -34,7 +34,7 @@ function App(props) {
             exact
             path="/projects"
             render={
-              !props.user.loggedIn
+              !props.user.loggedIn === true
                 ? () => <Redirect to="/" />
                 : (rProps) => (<DashboardContainer {...rProps}/>)
             }
@@ -42,7 +42,7 @@ function App(props) {
           <Route
             path="/insights"
             render={
-              !props.user.loggedIn
+              !props.user.loggedIn === true
                 ? () => <Redirect to="/" />
                 : (rProps) => (<InsightsContainer {...rProps}/>)
             }
@@ -50,7 +50,7 @@ function App(props) {
           <Route
             path="/projects/:id"
             render={
-              !props.user.loggedIn
+              !props.user.loggedIn === true
                 ? () => <Redirect to="/" />
                 : (rProps) => (<ProjectContainer {...rProps}/>)
             }

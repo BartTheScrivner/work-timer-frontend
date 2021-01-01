@@ -6,7 +6,8 @@ export default function userReducer(state = initialState, action) {
   let user;
   switch (action.type) {
     case 'START_LOGGING_IN':
-      return {...state, loggedIn: true}
+      user = {...state, loggedIn: true}
+      return user
     case "LOGIN_USER":
       return {
         ...state,

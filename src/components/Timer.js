@@ -23,7 +23,7 @@ export default function Timer(props) {
     } else {
       setCounting(false);
       setTotal(total + (count - start));
-      props.handleStop(start, count);
+      // props.handleStop(start, count);
       setStart(0);
       setCount(0);
       clearInterval(counter.current);

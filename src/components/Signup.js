@@ -8,7 +8,7 @@ class Signup extends React.Component {
   render() {
     return (
       <>
-        <Header centered as='h2'>Sign Up</Header>
+        <Header centered="true" size="large">Sign Up</Header>
         <Form className="auth-form" centered onSubmit={(e) => this.handleSubmit(e)}>
           <Form.Group centered>
             <Form.Input onChange={(e) => this.handleChange(e)} name="first_name" required={true} label="First Name" type="text" />
@@ -45,6 +45,7 @@ class Signup extends React.Component {
     fetch(`http://localhost:3000/api/v1/signup`, request)
     .then(r => r.json())
     .then(data => this.props.loginUser(data))
+    .catch(console.log)
   }
 
 }

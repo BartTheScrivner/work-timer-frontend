@@ -3,9 +3,13 @@ import { connect } from 'react-redux'
 import ProjectThumb from '../components/ProjectThumb'
 
 export const Dashboard = (props) => {
+  const {projects} = props
   return (
     <div className="container">
-      {props.projects.forEach(project => <ProjectThumb project={project}/>)}
+      {projects
+      ? projects.forEach(project => <ProjectThumb project={project}/>)
+      : "NOTHING HERE YET!"
+    }
     </div>
   )
 }
