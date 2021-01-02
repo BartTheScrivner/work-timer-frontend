@@ -1,4 +1,5 @@
 const initialState = {
+  user: null,
   loggedIn: false
 }
 
@@ -6,21 +7,12 @@ export default function userReducer(state = initialState, action) {
   let user;
   switch (action.type) {
     case 'START_LOGGING_IN':
-      user = {...state, loggedIn: true}
-      return user
-    case "LOGIN_USER":
-      user = action.data
-      return {
-        ...state,
-        ...user,
-        loggedIn: true
-      };
+      return {...state, loggedIn: true}
     case "SET_USER":
-      user = action.data
+      user = action.data.user
       return {
         ...state,
-        ...user,
-        loggedIn: true
+        ...user
       };
     case "UPDATE_USER":
       return {
