@@ -38,6 +38,7 @@ class Signup extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.loginUser(this.state);
+    this.props.setOpen(false)
   };
 }
 

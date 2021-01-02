@@ -46,6 +46,7 @@ class Signup extends React.Component {
     .then(r => r.json())
     .then(data => this.props.loginUser(data))
     .catch(this.props.logoutUser)
+    this.props.setOpen(false)
   }
 
 }

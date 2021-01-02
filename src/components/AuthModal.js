@@ -31,7 +31,7 @@ function AuthModal(props) {
       </Menu>
       
       <Segment className="auth-modal" attached='bottom'>
-        {tab === 'login' ? <Login /> : <Signup /> }
+        {tab === 'login' ? <Login setOpen={setOpen}/> : <Signup setOpen={setOpen}/> }
       </Segment>
     </Modal>
   )
