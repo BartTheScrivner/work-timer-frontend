@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Form, Header } from 'semantic-ui-react'
 import { connect } from 'react-redux'
-import { loginUser } from '../actions/userActions'
+import { loginUser, logoutUser } from '../actions/userActions'
 
 class Signup extends React.Component {
 
@@ -45,7 +45,7 @@ class Signup extends React.Component {
     fetch(`http://localhost:3000/api/v1/signup`, request)
     .then(r => r.json())
     .then(data => this.props.loginUser(data))
-    .catch(console.log)
+    .catch(this.props.logoutUser)
   }
 
 }
@@ -57,4 +57,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { loginUser })(Signup);
+export default connect(mapStateToProps, { loginUser, logoutUser })(Signup);

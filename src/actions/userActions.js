@@ -28,9 +28,8 @@ export function loginUser(login){
     }
     fetch(`http://localhost:3000/api/v1/login`, request)
     .then(r => r.json())
-    .then(console.log)
-      // data => dispatch({type: 'LOGIN_USER', data}))
-    .catch(console.log)
+    .then(data => dispatch({type: 'LOGIN_USER', data}))
+    .catch(() => dispatch({type: 'LOGOUT_USER'}))
   }
 };
 
