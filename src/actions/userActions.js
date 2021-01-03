@@ -1,6 +1,7 @@
 function handleLogin(data, dispatch){
   console.log("HITTING LOGIN STUFF \n DATA: ", data);
   localStorage.token = data.token
+  localStorage.current = data.user.id
   dispatch({type: 'SET_USER', data})
 }
 

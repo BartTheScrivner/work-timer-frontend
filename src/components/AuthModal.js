@@ -15,7 +15,7 @@ function AuthModal(props) {
       onClose={() => setOpen(false)}
       onOpen={() => setOpen(true)}
       open={open}
-      trigger={<li className="nav-item">Login</li>}
+      trigger={<button>Login</button>}
     >
       <Menu attached='top' tabular>
         <Menu.Item

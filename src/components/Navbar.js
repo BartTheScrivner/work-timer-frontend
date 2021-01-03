@@ -1,8 +1,10 @@
 import React from 'react'
 import {NavLink} from "react-router-dom"
+import {connect} from "react-redux";
+import {logoutUser} from "../actions/userActions"
 import AuthModal from './AuthModal'
 
-export const Navbar = () => {
+export const Navbar = (props) => {
   return (
     <>
       <div className="nav">
@@ -12,7 +14,14 @@ export const Navbar = () => {
             <li className="projects"><NavLink to="/projects">Projects</NavLink></li>
             <li className="nav-item"><NavLink to="/insights">Insights</NavLink></li>
             <li className="nav-item"><NavLink to="/settings">Settings</NavLink></li>
-            <AuthModal />
+            <li className="nav-item">
+              { 
+              props.user.loggedIn
+              ? <button onClick={props.logoutUser}>Logout</button>
+              : <AuthModal />
+              }
+            </li>
+            
           </ul>
         </nav>
       </div>
@@ -20,4 +29,11 @@ export const Navbar = () => {
   )
 }
 
-export default Navbar
+const mapStateToProps = state => {
+  return { 
+    user: state.user
+  };
+};
+
+export default connect(mapStateToProps, { logoutUser })(Navbar);
+
