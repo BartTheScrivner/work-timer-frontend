@@ -1,4 +1,6 @@
-function handleLogin(data, dispatch){
+// parses fetch responses by settting JWT authentication token 
+// and dispatching user to userReducer
+function __handleLogin(data, dispatch){
   console.log("HITTING LOGIN STUFF \n DATA: ", data);
   localStorage.token = data.token
   localStorage.current = data.user.id
@@ -17,7 +19,7 @@ export function setUser () {
     }
     fetch(`http://localhost:3000/api/v1/users/${localStorage.current}`, request)
     .then(r => r.json())
-    .then(data => handleLogin(data, dispatch))
+    .then(data => __handleLogin(data, dispatch))
     .catch(() => dispatch({type: 'LOGOUT_USER'}))
   }
 };
@@ -35,7 +37,7 @@ export function loginUser(login){
     }
     fetch(`http://localhost:3000/api/v1/login`, request)
     .then(r => r.json())
-    .then(data => handleLogin(data, dispatch))
+    .then(data => __handleLogin(data, dispatch))
     .catch(() => dispatch({type: 'LOGOUT_USER'}))
   }
 };
