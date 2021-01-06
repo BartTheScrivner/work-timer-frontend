@@ -18,7 +18,7 @@ export default function projectsReducer(state = initialState, action) {
     case "UPDATE_PROJECT":
       return {
         ...state,
-        projects[project.id]: {
+        [project.id]: {
           ...projects[project.id],
           project
         }
