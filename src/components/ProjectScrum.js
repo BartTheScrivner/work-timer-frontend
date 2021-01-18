@@ -1,28 +1,26 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 
 export const ProjectScrum = () => {
-  return (
-    <div>
-      <div className="planned">
-        Bleh
-      </div>
-      <div className="in-progress">
-        Bleh
-      </div>
-      <div className="overtime">
-        Bleh
-      </div>
-    </div>
-  )
+    return (
+        <div>
+            <div className="planned">
+                Bleh
+            </div>
+            <div className="in-progress">
+                Bleh
+            </div>
+            <div className="overtime">
+                Bleh
+            </div>
+        </div>
+    )
 }
 
 const mapStateToProps = (state) => ({
-  project: state.projects
+    project: state.projects
 })
 
-const mapDispatchToProps = {
-  
-}
+const mapDispatchToProps = {}
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProjectScrum)
