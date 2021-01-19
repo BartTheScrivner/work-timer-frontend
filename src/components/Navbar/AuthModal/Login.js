@@ -1,6 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
-import {loginUser} from "../actions/userActions";
+import {loginUser} from "../../../actions/userActions";
 import {Button, Container, Form, Header} from "semantic-ui-react";
 
 class Signup extends React.Component {

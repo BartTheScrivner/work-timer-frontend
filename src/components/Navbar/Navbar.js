@@ -1,8 +1,9 @@
 import React from 'react'
 import {NavLink} from "react-router-dom"
 import {connect} from "react-redux";
-import {logoutUser} from "../actions/userActions"
-import AuthModal from './AuthModal'
+import {logoutUser} from "../../actions/userActions"
+import AuthModal from './AuthModal/AuthModal'
+import "./Navbar.css"
 
 export const Navbar = (props) => {
     return (

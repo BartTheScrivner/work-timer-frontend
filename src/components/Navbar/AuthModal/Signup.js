@@ -1,7 +1,7 @@
 import React from 'react'
 import {Button, Form, Header} from 'semantic-ui-react'
 import {connect} from 'react-redux'
-import {loginUser, logoutUser} from '../actions/userActions'
+import {loginUser, logoutUser} from '../../../actions/userActions'
 
 class Signup extends React.Component {
 

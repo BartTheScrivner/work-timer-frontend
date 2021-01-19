@@ -3,7 +3,7 @@ import {Menu, Modal, Segment} from 'semantic-ui-react'
 import Signup from './Signup'
 import Login from './Login'
 
-function AuthModal(props) {
+function AuthModal() {
     const [open, setOpen] = React.useState(false)
     const [tab, setTab] = React.useState('login')
 

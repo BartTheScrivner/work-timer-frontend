@@ -1,6 +1,6 @@
 import React, {useRef, useState} from "react";
 
-export default function Timer(props) {
+export default function Timer() {
     //total time counted
     const [total, setTotal] = useState(0);
     //the Unix time when the timer is started

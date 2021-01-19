@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import ProjectThumb from '../components/ProjectThumb'
+import ProjectThumb from '../components/ProjectThumb/ProjectThumb'
 
 export const Dashboard = (props) => {
   const {projects} = props
