@@ -16,3 +16,35 @@ body {
   box-sizing: border-box;
   padding:  5rem 5rem 5rem 15rem;
 }
+
+.label{
+  font-weight: 500;
+}
+
+.medium {
+  font-size: 1.5rem;
+}
+.large {
+  font-size: 1.8rem;
+}
+
+.row-nowrap {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.containable {
+  margin: 0;
+  width: fit-content;
+}
+
+.right-labeled-icon {
+  display: flex;
+  margin: 0 1rem;
+  align-items: center;
+}
+
+.dashboard-header {
+  justify-content: space-between;
+  margin-bottom: .5rem;
+}
