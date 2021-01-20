@@ -9,7 +9,7 @@ export const Dashboard = (props) => {
     <div className="container">
       <div className="row-nowrap dashboard-header">
         <span className='large label'>Projects Dashboard</span>
-        <span className={'containable right-labeled-icon'}>
+        <span className={'clickable containable right-labeled-icon'}>
           <Icon name="plus" size='large'/>
           <span className='medium label'>Add a New Project</span>
         </span>

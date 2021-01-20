@@ -8,8 +8,12 @@ body {
   margin: 0;
   padding: 0;
   background: rgb(25,25,25);
-  background: linear-gradient(146deg, rgb(0, 0, 0) 0%, rgb(43, 42, 42) 100%);
+  background: linear-gradient(146deg, rgb(0, 6, 21) 0%, rgb(0, 0, 0) 100%);
   color: #fff;
+}
+
+hr {
+  margin-bottom: .5rem;
 }
 
 .container{
@@ -22,10 +26,10 @@ body {
 }
 
 .medium {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .large {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 
 .row-nowrap {
@@ -47,4 +51,9 @@ body {
 .dashboard-header {
   justify-content: space-between;
   margin-bottom: .5rem;
+}
+
+.clickable:hover {
+  text-shadow: 0 0 5px #30b3ff;
+  color: #30b3ff;
 }
