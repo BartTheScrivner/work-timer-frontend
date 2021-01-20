@@ -6,6 +6,7 @@ export const Dashboard = (props) => {
   const {projects} = props
   return (
     <div className="container">
+      <h1>Projects Dashboard</h1>
       {projects
       ? projects.forEach(project => <ProjectThumb project={project}/>)
       : "NOTHING HERE YET!"

@@ -19,10 +19,10 @@ export default function userReducer(state = initialState, action) {
         ...state,
         ...action.user
       };
-      case "LOGOUT_USER":
-        localStorage.clear()
-        return initialState;
-      default:
-        return state;
-    }
+    case "LOGOUT_USER":
+      localStorage.clear()
+      return initialState;
+    default:
+      return state;
   }
+}

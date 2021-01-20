@@ -1,10 +1,15 @@
-// parses fetch responses by settting JWT authentication token 
+// parses fetch responses by setting JWT authentication token
 // and dispatching user to userReducer
 function __handleLogin(data, dispatch){
   console.log("HITTING LOGIN STUFF \n DATA: ", data);
   localStorage.token = data.token
-  localStorage.current = data.user.id
+  localStorage.current = data.id
   dispatch({type: 'SET_USER', data})
+}
+
+function __handleError(err, dispatch) {
+  dispatch({type: 'LOGOUT_USER'})
+  console.log(err)
 }
 
 export function setUser () {
@@ -20,9 +25,9 @@ export function setUser () {
     fetch(`http://localhost:3000/api/v1/users/${localStorage.current}`, request)
     .then(r => r.json())
     .then(data => __handleLogin(data, dispatch))
-    .catch(() => dispatch({type: 'LOGOUT_USER'}))
+    .catch(err => __handleError(err, dispatch))
   }
-};
+}
 
 export function loginUser(login){
   return (dispatch) => {
@@ -38,9 +43,9 @@ export function loginUser(login){
     fetch(`http://localhost:3000/api/v1/login`, request)
     .then(r => r.json())
     .then(data => __handleLogin(data, dispatch))
-    .catch(() => dispatch({type: 'LOGOUT_USER'}))
+    .catch((err) => __handleError(err, dispatch))
   }
-};
+}
 
 export function updateUser(data) {
   return {
@@ -50,5 +55,5 @@ export function updateUser(data) {
 }
 
 export function logoutUser() {
-  return {type: 'LOGOUT_USER'}  
+  return {type: 'LOGOUT_USER'}
 }
